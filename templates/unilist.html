@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>University List Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container-fluid" align="center">
+    <h1>These are University Details</h1>
+    <div class="jumbotron">
+        <table class="table" border="1px">
+            <thead>
+            <tr>
+                <th>University Name</th>
+                <th>University NO</th>
+                <th>Address</th>
+            </tr>
+            </thead>
+            {% for x in university_list %}
+                <tr>
+                    <td>{{ x.university_name }}</td>
+                    <td>{{ x.university_id }}</td>
+                    <td>{{ x.address }}</td>
+                <img scr="{{ x.image.url }}" alt="#"/>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <p>Do you want enter the University Details<a href="{% url 'university' %}"><i> CLick Here</i></a></p>
+</div>
+</body>
+</html>

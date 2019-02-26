@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Employee List Page</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+          integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+          crossorigin="anonymous">
+</head>
+<body>
+
+<div class="container" align="center">
+    <h1>These are the Employee Details</h1>
+
+    <div class="jumbotron">
+        <table class="table" border="1px">
+            <thead>
+            <tr>
+                <th>Employee Name</th>
+                <th>Employee ID</th>
+                <th>Emp Salry</th>
+                <th>Address</th>
+                <th>Worked At</th>
+            </tr>
+            </thead>
+            {% for x in employees_list %}
+                <tr>
+                    <td>{{ x.employee_name }}</td>
+                    <td>{{ x.employee_id }}</td>
+                    <td>{{ x.employee_salary }}</td>
+                    <td>{{ x.employee_address }}</td>
+                    <td>{{ x.worked_at }}</td>
+                </tr>
+            {% endfor %}
+        </table>
+    </div>
+    <p>Do you want enter the Employee Details<a href="{% url 'employee' %}"><i> CLick Here</i></a></p>
+</div>
+
+</body>
+</html>
